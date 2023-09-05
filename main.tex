@@ -1,0 +1,70 @@
+% Left align equations and labels equations on the left
+\documentclass[fleqn, leqno]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\usepackage{chngcntr}
+% Creates header with name, course, assignment, and page number. Removes footer page number
+\pagestyle{fancy}
+\fancyhead[L]{Name}
+\fancyhead[C]{MATH 317: Homework 1}
+\fancyhead[R]{\thepage}
+\cfoot{}
+% Changes the subsection to be alphabetical characters as seen in textbook
+\renewcommand*{\thesubsection}{\alph{subsection}.}
+% Changes the equation numbering to restart at section
+\counterwithin*{equation}{section}
+% Defines the norm symbol
+\newcommand{\norm}[1]{\lVert#1\rVert}
+% Defines the fancy R symbol
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\realnumberset}{\mathbb{R}^n}
+
+\begin{document}
+\section*{This is a non-numbered section}
+This is a matrix $x = \begin{bmatrix}
+    -2 & 4 & 5 \\
+    0 & 0 & 0
+\end{bmatrix}
+$
+\subsection{This is a subsection}
+\subsection{And another subsection}
+\subsection{Let's align by the equal signs, use the \&= command}
+\begin{align*}
+0 &= \begin{bmatrix}
+0 & 1 & 2
+\end{bmatrix}\\
+0 &= \begin{bmatrix}
+    0 & 1 & 2
+    \end{bmatrix}\\
+0 + 0 &= \begin{bmatrix}
+    0 & 1 & 2
+\end{bmatrix}
+\end{align*}
+\section{Create a numbered section}
+\subsection{Enter math mode using the \$ symbol for fancy symbols}
+\subsection{Some mathematical notations}
+Use the carrot to create an exponent: $x^n$\\
+Use the underscore to create a subscript: 
+$x_n$\\
+Use \verb|\norm| to create the normal symbol: 
+$\norm{x}$\\
+Use \verb|\qed| to create the qed square: 
+$\qed$\\
+Use \verb|\cdot| to create the dot product symbol: 
+$\cdot$\\
+Use \verb|\R| to create Fancy R: $\R$ \\
+Use \verb|\realnumberset| to create real number set: $\realnumberset$ \\
+Use \verb|\vec| to create a vector: 
+$\Vec{x}$\\
+Use \verb|\times| to create a cross product: 
+$\times$
+\subsection{Some text formatting}
+Use \verb|\textbf| to create \textbf{some bold text}\\
+Use \verb|\textit| to create \textit{some italics}\\
+Use \verb|\text| to create normal text inside of math mode
+\subsection{Use $\backslash \backslash$ to create a new line}
+\end{document}
